@@ -1,0 +1,10 @@
+:root {
+  --bg-color: #191b1f;
+}
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+}
