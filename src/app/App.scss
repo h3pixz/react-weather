@@ -1,0 +1,22 @@
+:root {
+  --bg-color: #191b1f;
+  --bg-weather: #292929;
+  --container-width: 452px;
+}
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.main-container {
+  max-width: var(--container-width);
+}
+
+.weather-container {
+  background-color: var(--bg-weather);
+  border-radius: 28px;
+  padding: 40px 47px;
+}
