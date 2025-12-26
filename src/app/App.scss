@@ -2,6 +2,8 @@
   --bg-color: #191b1f;
   --bg-weather: #292929;
   --container-width: 452px;
+  --input-color: #c2d4d3;
+  --font-color: white;
 }
 * {
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -19,4 +21,43 @@ body {
   background-color: var(--bg-weather);
   border-radius: 28px;
   padding: 40px 47px;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--input-color);
+    max-width: 342px;
+    height: 34px;
+  }
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  .icon-temp {
+    font-size: 42px;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .city-day {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 75px;
+    font-size: 26px;
+  }
+
+  hr {
+    width: 341px;
+  }
 }
