@@ -33,6 +33,28 @@ body {
     max-width: 342px;
     height: 34px;
   }
+
+  .text-info {
+    font-size: 18px;
+    margin-top: 40px;
+    .weath {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .mintmp {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .maxtmp {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+  }
 }
 
 .weather {

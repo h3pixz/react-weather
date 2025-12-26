@@ -26,14 +26,18 @@ export function App() {
             <hr></hr>
           </div>
           <div className="text-info">
-            <img src={RainCloud}></img>
-            <p>Light Rain</p>
-
-            <img src={MinTemp}></img>
-            <p>Min Temperature - 28°C</p>
-
-            <img src={MaxTemp}></img>
-            <p>Max Temperature - 31°C</p>
+            <div className="weath">
+              <img src={RainCloud}></img>
+              <p>Light Rain</p>
+            </div>
+            <div className="mintmp">
+              <img src={MinTemp}></img>
+              <p>Min Temperature - 28°C</p>
+            </div>
+            <div className="maxtmp">
+              <img src={MaxTemp}></img>
+              <p>Max Temperature - 31°C</p>
+            </div>
           </div>
         </div>
       </div>
