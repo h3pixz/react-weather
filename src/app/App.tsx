@@ -27,7 +27,7 @@ export function App() {
           </div>
           <div className="text-info">
             <div className="weath">
-              <img src={RainCloud}></img>
+              <img src={RainCloud} className="rainCloud"></img>
               <p>Light Rain</p>
             </div>
             <div className="mintmp">

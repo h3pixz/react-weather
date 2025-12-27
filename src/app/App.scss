@@ -15,6 +15,10 @@ body {
 
 .main-container {
   max-width: var(--container-width);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .weather-container {
@@ -41,10 +45,18 @@ body {
   .text-info {
     font-size: 18px;
     margin-top: 40px;
+
+    p {
+      margin: 4px;
+    }
     .weath {
       display: flex;
       align-items: center;
       gap: 9px;
+
+      .rainCloud {
+        width: 18px;
+      }
     }
 
     .mintmp {
