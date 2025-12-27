@@ -32,6 +32,10 @@ body {
     background-color: var(--input-color);
     max-width: 342px;
     height: 34px;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .text-info {
