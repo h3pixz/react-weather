@@ -1,44 +1,56 @@
 import "./App.scss";
-import Rainy from "../assets/rainy.png";
-import RainCloud from "../assets/rainCloud.svg";
-import MinTemp from "../assets/minTemp.svg";
-import MaxTemp from "../assets/maxTemp.svg";
+import { useState } from "react";
 
 export function App() {
+  const [city, setCity] = useState("");
+  const [weatherData, setWeatherData] = useState<any>(null);
+
+  const fethWeather = async () => {
+    const key = "db6638c4bda7f60f1c6d897e77c152a3";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}&lang=ru`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setWeatherData(data);
+    } catch {
+      setWeatherData(null);
+    }
+  };
+
   return (
     <>
       <div className="main-container">
         <div className="weather-container">
-          <input placeholder="Search city..."></input>
-          <div className="weather">
-            <div className="icon-temp">
-              <img src={Rainy}></img>
-              <h1>30°C</h1>
-            </div>
-            <div className="city-day">
-              <div className="city">
-                <p>Kuala Lumpur</p>
+          <input
+            placeholder="Search city..."
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && fethWeather()}
+          ></input>
+          {weatherData && (
+            <div className="weather">
+              <div className="icon-temp">
+                <img
+                  src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                ></img>
+                <h1>{Math.round(weatherData.main.temp)}°C</h1>
               </div>
-              <div className="day">
-                <p>Monday</p>
+              <div className="city-day">
+                <div className="city">
+                  <p>{weatherData.name}</p>
+                </div>
+                <div className="day">
+                  <p>
+                    {new Date().toLocaleDateString("eng-EN", {
+                      weekday: "long",
+                    })}
+                  </p>
+                </div>
               </div>
+              <hr></hr>
             </div>
-            <hr></hr>
-          </div>
-          <div className="text-info">
-            <div className="weath">
-              <img src={RainCloud} className="rainCloud"></img>
-              <p>Light Rain</p>
-            </div>
-            <div className="mintmp">
-              <img src={MinTemp}></img>
-              <p>Min Temperature - 28°C</p>
-            </div>
-            <div className="maxtmp">
-              <img src={MaxTemp}></img>
-              <p>Max Temperature - 31°C</p>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </>

@@ -36,6 +36,7 @@ body {
     background-color: var(--input-color);
     max-width: 342px;
     height: 34px;
+    font-size: 16px;
 
     &:focus {
       outline: none;
@@ -84,6 +85,10 @@ body {
 
     h1 {
       margin: 0;
+    }
+
+    img {
+      height: 150px;
     }
   }
 
