@@ -5,7 +5,7 @@ export function App() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<any>(null);
 
-  const fethWeather = async () => {
+  const fetсhWeather = async () => {
     const key = "db6638c4bda7f60f1c6d897e77c152a3";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}&lang=ru`;
 
@@ -26,7 +26,7 @@ export function App() {
             placeholder="Search city..."
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && fethWeather()}
+            onKeyDown={(e) => e.key === "Enter" && fetсhWeather()}
           ></input>
           {weatherData && (
             <div className="weather">
